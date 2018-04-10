@@ -1,0 +1,27 @@
+Index: src/test/java/ShoppingCartPack/ByAgeOfferTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package ShoppingCartPack;\n\nimport ShoppingCartPack.ByAgeOffer;\nimport ShoppingCartPack.Offer;\nimport ShoppingCartPack.Person;\nimport ShoppingCartPack.Product;\nimport org.junit.Assert;\nimport org.junit.Test;\n\npublic class ByAgeOfferTest {\n\n    @Test\n    public void testApplyOfferToYoung(){\n        Person personIon = new Person(10 , \"Ion\");\n        Offer byAgeOffer = new ByAgeOffer(personIon);\n\n        Product businessLunch =\n                new Product(\"business lunch\",30, 1);\n\n        byAgeOffer.applyOffer(businessLunch);\n        Assert.assertEquals(25.5, businessLunch.getTotalPriece(), 0);\n    }\n\n    @Test\n    public void testApplyOfferToRegular(){\n        Person personIon = new Person(40 , \"Ion\");\n        Offer byAgeOffer = new ByAgeOffer(personIon);\n\n        Product businessLunch =\n                new Product(\"business lunch\",30, 1);\n\n        byAgeOffer.applyOffer(businessLunch);\n        Assert.assertEquals(30, businessLunch.getTotalPriece(), 0);\n    }\n\n    @Test\n    public void testApplyOfferToOld(){\n        Person personIon = new Person(60 , \"Ion\");\n        Offer byAgeOffer = new ByAgeOffer(personIon);\n\n        Product businessLunch =\n                new Product(\"business lunch\",30, 1);\n\n        byAgeOffer.applyOffer(businessLunch);\n        Assert.assertEquals(24, businessLunch.getTotalPriece(), 0);\n    }\n\n    @Test\n    public void testApplyOfferToYoungZeroPrice(){\n        Person personIon = new Person(60 , \"Ion\");\n        Offer byAgeOffer = new ByAgeOffer(personIon);\n\n        Product businessLunch =\n                new Product(\"business lunch\",0, 1);\n\n        byAgeOffer.applyOffer(businessLunch);\n        Assert.assertEquals(0, businessLunch.getTotalPriece(), 0);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/ShoppingCartPack/ByAgeOfferTest.java	(date 1522913738000)
++++ src/test/java/ShoppingCartPack/ByAgeOfferTest.java	(revision )
+@@ -56,4 +56,17 @@
+         byAgeOffer.applyOffer(businessLunch);
+         Assert.assertEquals(0, businessLunch.getTotalPriece(), 0);
+     }
++    
++    @Test
++    public void testApplyOfferToYoungZeroPrice(){
++        Person personIon = new Person(60 , "Ion");
++        Offer byAgeOffer = new ByAgeOffer(personIon);
++
++        Product businessLunch =
++                new Product("business lunch",0, 1);
++
++        byAgeOffer.applyOffer(businessLunch);
++        Assert.assertEquals(0, businessLunch.getTotalPriece(), 0);
++    }
++
+ }

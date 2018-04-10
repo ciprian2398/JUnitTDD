@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="FirstPIT" type="PIT" factoryName="PIT Runner" editBeforeRun="true" REPORT_DIR="$PROJECT_DIR$/target/report" SOURCE_DIRS="$PROJECT_DIR$/src" TARGET_CLASSES="ShoppingCartPack.*" otherParams="--outputFormats XML,HTML">
+    <module name="JUnitTDD" />
+    <method />
+  </configuration>
+</component>
